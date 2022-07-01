@@ -106,10 +106,10 @@ augroup NVIMRC
     autocmd BufWritePost *.nvimrc exec ":so %"
 augroup END
 " Undo operations
-noremap l u
+" noremap l u
 " Insert Key
-noremap k i
-noremap K I
+" noremap k i
+" noremap K I
 " Copy to system clipboard
 vnoremap Y "+y
 " Find pair
@@ -132,28 +132,34 @@ noremap <silent> <LEADER>o za
 " < n   i >
 "     e
 "     v
-noremap <silent> u k
-noremap <silent> n h
-noremap <silent> e j
-noremap <silent> i l
-noremap <silent> gu gk
-noremap <silent> ge gj
+" noremap <silent> u k
+" noremap <silent> n h
+" noremap <silent> e j
+" noremap <silent> i l
+" noremap <silent> gu gk
+" noremap <silent> ge gj
 noremap <silent> \v v$h
 " U/E keys for 5 times u/e (faster navigation)
-noremap <silent> U 5k
-noremap <silent> E 5j
+noremap <silent> K 5k
+"noremap <silent> U 5k
+noremap <silent> J 5j
+"noremap <silent> E 5j
 " N key: go to the start of the line
-noremap <silent> N 0
+noremap <silent> H 0
+" noremap <silent> N 0
 " I key: go to the end of the line
-noremap <silent> I $
+noremap <silent> L $
+" noremap <silent> I $
 " Faster in-line navigation
 noremap W 5w
 noremap B 5b
 " set h (same as n, cursor left) to 'end of word'
-noremap h e
+" noremap h e
 " Ctrl + U or E will move up/down the view port without moving the cursor
-noremap <C-U> 5<C-y>
-noremap <C-E> 5<C-e>
+noremap <C-K> 5<C-y>
+noremap <C-J> 5<C-e>
+" noremap <C-U> 5<C-y>
+" noremap <C-E> 5<C-e>
 " Custom cursor movement
 source $HOME/.config/nvim/cursor.vim
 " If you use Qwerty keyboard, uncomment the next line.
@@ -178,25 +184,34 @@ cnoremap <M-w> <S-Right>
 " ==================== Window management ====================
 " Use <space> + new arrow keys for moving the cursor around windows
 noremap <LEADER>w <C-w>w
-noremap <LEADER>u <C-w>k
-noremap <LEADER>e <C-w>j
-noremap <LEADER>n <C-w>h
-noremap <LEADER>i <C-w>l
+noremap <LEADER>k <C-w>k
+noremap <LEADER>j <C-w>j
+noremap <LEADER>h <C-w>h
+noremap <LEADER>l <C-w>l
+" noremap <LEADER>u <C-w>k
+" noremap <LEADER>e <C-w>j
+" noremap <LEADER>n <C-w>h
+" noremap <LEADER>i <C-w>l
 noremap qf <C-w>o
 " Disable the default s key
-noremap s <nop>
+" noremap s <nop>
 " split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
-noremap su :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
-noremap se :set splitbelow<CR>:split<CR>
-noremap sn :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
-noremap si :set splitright<CR>:vsplit<CR>
+noremap sk :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
+noremap sj :set splitbelow<CR>:split<CR>
+noremap sh :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
+noremap sl :set splitright<CR>:vsplit<CR>
+" noremap su :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
+" noremap se :set splitbelow<CR>:split<CR>
+" noremap sn :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
+" noremap si :set splitright<CR>:vsplit<CR>
 " Resize splits with arrow keys
 noremap <up> :res +5<CR>
 noremap <down> :res -5<CR>
 noremap <left> :vertical resize-5<CR>
 noremap <right> :vertical resize+5<CR>
 " Place the two screens up and down
-noremap sh <C-w>t<C-w>K
+noremap si <C-w>t<C-w>K
+" noremap sh <C-w>t<C-w>K
 " Place the two screens side by side
 noremap sv <C-w>t<C-w>H
 " Rotate screens
@@ -211,11 +226,15 @@ noremap <LEADER>q <C-w>j:q<CR>
 noremap tu :tabe<CR>
 noremap tU :tab split<CR>
 " Move around tabs with tn and ti
-noremap tn :-tabnext<CR>
-noremap ti :+tabnext<CR>
+noremap th :-tabnext<CR>
+noremap tl :+tabnext<CR>
+" noremap tn :-tabnext<CR>
+"noremap ti :+tabnext<CR>
 " Move the tabs with tmn and tmi
-noremap tmn :-tabmove<CR>
-noremap tmi :+tabmove<CR>
+noremap tmh :-tabmove<CR>
+noremap tml :+tabmove<CR>
+" noremap tmn :-tabmove<CR>
+" noremap tmi :+tabmove<CR>
 
 
 " ==================== Markdown Settings ====================
@@ -941,7 +960,7 @@ let g:move_key_modifier = 'C'
 
 
 " ==================== any-jump ====================
-nnoremap j :AnyJump<CR>
+nnoremap <LEADER>j :AnyJump<CR>
 let g:any_jump_window_width_ratio  = 0.8
 let g:any_jump_window_height_ratio = 0.9
 
